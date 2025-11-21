@@ -1,0 +1,85 @@
+table customers_updated
+	lineageTag: e594ee4c-7326-48ae-b575-26d018149333
+	sourceLineageTag: [dbo].[customers_updated]
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: dd6fa273-a8af-4cfe-bb00-9d26666f2974
+		sourceLineageTag: CustomerID
+		summarizeBy: count
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c3f7426d-cd91-4a17-a43e-e6e3546c4ee3
+		sourceLineageTag: FirstName
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 511227a9-04f3-4f7a-8052-5290e7727fc8
+		sourceLineageTag: LastName
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 00bc947e-acfe-4be8-9df4-40adcae66cff
+		sourceLineageTag: Email
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 39980261-719e-41c7-b767-c957075b83a5
+		sourceLineageTag: Region
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column JoinDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: b0bf1cb5-7bf9-48c1-9f27-ae3d53ce3134
+		sourceLineageTag: JoinDate
+		summarizeBy: none
+		sourceColumn: JoinDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerType
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7f028444-4b00-455a-b2a9-5e1ddb73a8e0
+		sourceLineageTag: CustomerType
+		summarizeBy: none
+		sourceColumn: CustomerType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customers_updated = entity
+		mode: directLake
+		source
+			entityName: customers_updated
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
