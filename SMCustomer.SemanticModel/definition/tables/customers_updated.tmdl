@@ -2,6 +2,11 @@ table customers_updated
 	lineageTag: e594ee4c-7326-48ae-b575-26d018149333
 	sourceLineageTag: [dbo].[customers_updated]
 
+	measure test = "123"
+		lineageTag: 17546beb-46f3-41f7-a10c-c09669af9eae
+
+		changedProperty = Name
+
 	column CustomerID
 		dataType: int64
 		formatString: 0
